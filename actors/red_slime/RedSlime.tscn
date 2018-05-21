@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://actors/red_slime/RedSlime.gd" type="Script" id=1]
 [ext_resource path="res://assets/red_slime/RedSlime.png" type="Texture" id=2]
+[ext_resource path="res://assets/sounds/push.wav" type="AudioStream" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 6.74059
+radius = 4.16938
 height = 5.33621
 
 [sub_resource type="Animation" id=2]
@@ -137,7 +138,15 @@ custom_solver_bias = 0.0
 radius = 26.6731
 height = 85.7361
 
-[node name="RedSlime" type="KinematicBody2D"]
+[sub_resource type="CapsuleShape2D" id=7]
+
+custom_solver_bias = 0.0
+radius = 6.78325
+height = 3.62119
+
+[node name="RedSlime" type="KinematicBody2D" groups=[
+"enemies",
+]]
 
 input_pickable = false
 collision_layer = 1
@@ -150,7 +159,6 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-rotation = 1.5708
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
@@ -192,8 +200,36 @@ rotation = 1.5708
 shape = SubResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="Hitbox" type="Area2D" parent="." index="4"]
+
+position = Vector2( 0.5, 0 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
+
+rotation = 1.5708
+shape = SubResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PushSound" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 3 )
+volume_db = -5.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
 [connection signal="body_entered" from="ChaseArea" to="." method="_on_ChaseArea_body_entered"]
 
 [connection signal="body_exited" from="ChaseArea" to="." method="_on_ChaseArea_body_exited"]
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
 
 

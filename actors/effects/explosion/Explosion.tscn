@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/effects/Effects.png" type="Texture" id=1]
 [ext_resource path="res://actors/effects/explosion/Explosion.gd" type="Script" id=2]
+[ext_resource path="res://assets/light_textures/Radial2.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 
@@ -95,17 +96,20 @@ _sections_unfolded = [ "Angular Velocity", "Color", "Damping", "Emission Shape",
 custom_solver_bias = 0.0
 radius = 16.433
 
-[node name="Explosion" type="Sprite" index="0"]
+[node name="Explosion" type="Sprite"]
 
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 1 )
 vframes = 6
 hframes = 8
 frame = 2
 script = ExtResource( 2 )
-_sections_unfolded = [ "Animation" ]
+_sections_unfolded = [ "Animation", "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
+small_push = 100
+big_push = 500
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 
@@ -139,7 +143,7 @@ h_frames = 11
 v_frames = 8
 _sections_unfolded = [ "Drawing", "Process Material", "Textures" ]
 
-[node name="KinematicBody2D" type="Area2D" parent="." index="2"]
+[node name="Hitbox2D" type="Area2D" parent="." index="2"]
 
 input_pickable = false
 gravity_vec = Vector2( 0, 1 )
@@ -150,10 +154,36 @@ audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision", "collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox2D" index="0"]
 
 shape = SubResource( 7 )
 
+[node name="Light2D" type="Light2D" parent="." index="3"]
+
+enabled = true
+editor_only = false
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+texture_scale = 0.1
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+
+[connection signal="body_entered" from="Hitbox2D" to="." method="_on_Hitbox2D_body_entered"]
 
 

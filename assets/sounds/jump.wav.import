@@ -7,10 +7,10 @@ path="res://.import/jump.wav-395b727cde98999423d5c020c9c3492f.sample"
 [deps]
 
 source_file="res://assets/sounds/jump.wav"
-source_md5="f40e9e943ab3f756d6a230f9b5c1278d"
+source_md5="2a66d6b2c9f73249ed8aac705b627217"
 
 dest_files=[ "res://.import/jump.wav-395b727cde98999423d5c020c9c3492f.sample" ]
-dest_md5="2cfe4c9bfea3f6c06e7d5704307e3eb9"
+dest_md5="94887e3cf9f34c7ddb9c952bfef3481d"
 
 [params]
 

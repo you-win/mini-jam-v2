@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/self_destruct.wav-9545ebbe8c4a14ee9d87d459b4551370.sample"
+
+[deps]
+
+source_file="res://assets/sounds/self_destruct.wav"
+source_md5="c38230918e108b266b62fa004c81277a"
+
+dest_files=[ "res://.import/self_destruct.wav-9545ebbe8c4a14ee9d87d459b4551370.sample" ]
+dest_md5="c1b530a9b47fd3ce9b9f6e46b7bdd8be"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

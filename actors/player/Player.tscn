@@ -1,15 +1,18 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://actors/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/Player.png" type="Texture" id=2]
-[ext_resource path="res://assets/sounds/jump.wav" type="AudioStream" id=3]
-[ext_resource path="res://assets/sounds/explosion.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/light_textures/Radial2.png" type="Texture" id=3]
+[ext_resource path="res://assets/sounds/jump.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/sounds/land.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/sounds/explosion.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/sounds/footsteps.wav" type="AudioStream" id=7]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 3.00719
-height = 19.8179
+radius = 3.007
+height = 19.818
 
 [sub_resource type="Animation" id=2]
 
@@ -40,6 +43,42 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, -2 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 4 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:shape:height")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 11.848 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Light2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2.53396, -1.52183 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -72,6 +111,42 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 1, -1 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:shape:height")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 19.8179 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Light2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2.4774, -12.4948 ) ]
+}
 
 [sub_resource type="Animation" id=4]
 
@@ -101,6 +176,42 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, -2 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:shape:height")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 19.8179 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Light2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 5.486, -11.3886 ), Vector2( 3.50217, -11.4831 ), Vector2( 3.65439, -12.4697 ), Vector2( 5.70143, -12.3817 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -133,6 +244,42 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 1, -1 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:shape:height")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 19.8179 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Light2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2.64709, -11.6464 ) ]
+}
 
 [sub_resource type="Animation" id=6]
 
@@ -163,11 +310,47 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 1, -2 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:shape:height")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 19.8179 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Light2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 5.64486, -12.4948 ), Vector2( 5.5883, -11.5333 ), Vector2( 5.5506, -10.4963 ), Vector2( 5.54117, -11.5521 ) ]
+}
 
 [sub_resource type="Animation" id=7]
 
 resource_name = "self_destruct"
-length = 1.0
+length = 0.7
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -177,7 +360,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.5, 0.7, 0.8 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.5, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 24, 25, 26, 27, 28, 29 ]
@@ -194,19 +377,53 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 1, -2 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 2 ), Vector2( 0, 4 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:shape:height")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 19.8179, 16.0419, 11.8476 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Light2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 4.68996, -9.61658 ), Vector2( 3.61529, -6.50569 ), Vector2( 2.59718, -1.52825 ), Vector2( 3.50217, -1.47169 ), Vector2( 2.48406, -1.69794 ), Vector2( 1.46595, -2.37668 ) ]
+}
 
-[node name="Player" type="KinematicBody2D" index="0" groups=[
+[node name="Player" type="KinematicBody2D" groups=[
 "player",
 ]]
 
 input_pickable = false
-collision_layer = 1
+collision_layer = 2
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -221,7 +438,33 @@ vframes = 6
 hframes = 8
 _sections_unfolded = [ "Animation", "Offset" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+[node name="Light2D" type="Light2D" parent="." index="2"]
+
+position = Vector2( 5.486, -11.3886 )
+enabled = true
+editor_only = false
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+texture_scale = 0.15
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -236,28 +479,44 @@ anims/move = SubResource( 6 )
 anims/self_destruct = SubResource( 7 )
 blend_times = [  ]
 
-[node name="JumpSound" type="AudioStreamPlayer" parent="." index="3"]
-
-stream = ExtResource( 3 )
-volume_db = 0.0
-autoplay = false
-mix_target = 0
-bus = "Master"
-
-[node name="ExplosionSound" type="AudioStreamPlayer" parent="." index="4"]
+[node name="JumpSound" type="AudioStreamPlayer" parent="." index="4"]
 
 stream = ExtResource( 4 )
-volume_db = 0.0
+volume_db = -8.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="Camera2D" type="Camera2D" parent="." index="5"]
+[node name="LandSound" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 5 )
+volume_db = -8.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = ExtResource( 6 )
+volume_db = -5.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="MoveSound" type="AudioStreamPlayer" parent="." index="7"]
+
+stream = ExtResource( 7 )
+volume_db = -15.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Camera2D" type="Camera2D" parent="." index="8"]
 
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 0.5, 0.5 )
+zoom = Vector2( 0.4, 0.4 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
@@ -277,6 +536,9 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Drag Margin", "Smoothing" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 

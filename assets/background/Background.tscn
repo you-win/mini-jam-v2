@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/background/Background.png" type="Texture" id=1]
+
+[node name="Background" type="Node"]
+
+[node name="Background1" type="Sprite" parent="." index="0"]
+
+position = Vector2( 18.4718, 17.8469 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Background2" type="Sprite" parent="." index="1"]
+
+position = Vector2( 54.9989, 17.9857 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 0, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+

@@ -1,0 +1,205 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/props/Props.png" type="Texture" id=1]
+
+[node name="Props" type="Node"]
+
+[node name="Prop1" type="Sprite" parent="." index="0"]
+
+position = Vector2( 22.6473, 22.0003 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Prop2" type="Sprite" parent="." index="1"]
+
+position = Vector2( 71.164, 23.4272 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 0, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Prop3" type="Sprite" parent="." index="2"]
+
+position = Vector2( 119.205, 23.665 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 0, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Prop4" type="Sprite" parent="." index="3"]
+
+position = Vector2( 20.7447, 64.5712 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 32, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Prop5" type="Sprite" parent="." index="4"]
+
+position = Vector2( 68.31, 68.6143 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 32, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Prop6" type="Sprite" parent="." index="5"]
+
+position = Vector2( 113.021, 69.5656 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Prop7" type="Sprite" parent="." index="6"]
+
+position = Vector2( 20.2337, 113.925 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 64, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Prop8" type="Sprite" parent="." index="7"]
+
+position = Vector2( 62.6565, 114.7 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 64, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Prop9" type="Sprite" parent="." index="8"]
+
+position = Vector2( 107.404, 114.119 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 64, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Prop10" type="Sprite" parent="." index="9"]
+
+position = Vector2( 151.57, 114.119 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 96, 64, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Prop11" type="Sprite" parent="." index="10"]
+
+position = Vector2( 24.6891, 156.348 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 96, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Prop12" type="Sprite" parent="." index="11"]
+
+position = Vector2( 63.2376, 155.38 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 96, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Prop13" type="Sprite" parent="." index="12"]
+
+position = Vector2( 108.566, 153.83 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 96, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Prop14" type="Sprite" parent="." index="13"]
+
+position = Vector2( 148.858, 154.605 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 96, 96, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Prop15" type="Sprite" parent="." index="14"]
+
+position = Vector2( 27.5948, 198.384 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 128, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Prop16" type="Sprite" parent="." index="15"]
+
+position = Vector2( 67.4993, 197.028 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 128, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Prop17" type="Sprite" parent="." index="16"]
+
+position = Vector2( 110.891, 197.802 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 128, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Prop18" type="Sprite" parent="." index="17"]
+
+position = Vector2( 147.696, 197.028 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 96, 128, 32, 32 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+

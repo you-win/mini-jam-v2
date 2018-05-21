@@ -22,6 +22,7 @@ var chase_target = self
 onready var sprite = $Sprite
 onready var animation_player = $AnimationPlayer
 onready var chase_area = $ChaseArea
+onready var push_sound = $PushSound
 
 func _ready():
 	state = IDLE
@@ -55,7 +56,7 @@ func _physics_process(delta):
 	
 	#chase based on target position
 	else:
-		var chase_direction = (chase_target.position - position).normalized()
+		var chase_direction = (chase_target.position - self.position).normalized()
 		
 		if chase_direction.x < 0:
 			target_speed -= 1
@@ -103,7 +104,15 @@ func _on_ChaseArea_body_entered(body):
 		is_chasing = true
 		chase_target = body
 
-
 func _on_ChaseArea_body_exited(body):
 	if body.is_in_group("player"):
 		is_chasing = false
+
+func _on_Hitbox_body_entered(body):
+	if body.is_in_group("player"):
+		push_sound.play(0)
+		var push_direction = (body.position - self.position).normalized()
+		if push_direction.x > 0:
+			body.linear_velocity.x += 500
+		elif push_direction.x < 0:
+			body.linear_velocity.x -= 500

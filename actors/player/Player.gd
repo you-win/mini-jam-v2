@@ -1,5 +1,8 @@
 extends "res://general_scripts/PhysicsObject.gd"
 
+#signals
+signal exploded
+
 #constants
 const MOVEMENT_SPEED = 120
 const JUMP_SPEED = 200
@@ -10,11 +13,14 @@ enum states {IDLE, MOVE, JUMP, FALL, SELF_DESTRUCT, EXPLODING}
 
 #variables
 var is_flipped = false
+var has_played_landing_sound = true
 
 onready var sprite = $Sprite
 onready var animation_player = $AnimationPlayer
 onready var jump_sound = $JumpSound
 onready var explosion_sound = $ExplosionSound
+onready var land_sound = $LandSound
+onready var move_sound = $MoveSound
 
 func _ready():
 	pass
@@ -54,6 +60,13 @@ func _physics_process(delta):
 	else:
 		sprite.scale.x = 1
 	
+	#handle landing sound
+	if(is_on_floor() and !has_played_landing_sound):
+		land_sound.play(0)
+		has_played_landing_sound = true
+	elif !is_on_floor():
+		has_played_landing_sound = false
+	
 	#animations
 	if state == SELF_DESTRUCT or state == EXPLODING:
 		pass
@@ -75,6 +88,8 @@ func change_state(new_state):
 			animation = "idle"
 		MOVE:
 			animation = "move"
+			if !move_sound.playing:
+				move_sound.play(0)
 		JUMP:
 			animation = "jump"
 		FALL:
@@ -91,9 +106,15 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		"self_destruct":
 			self.add_child(preload("res://actors/effects/explosion/Explosion.tscn").instance())
 			change_state(EXPLODING)
+			emit_signal("exploded", position)
 		"exploding":
 			if Input.is_action_pressed("ui_select"):
 				self.add_child(preload("res://actors/effects/explosion/Explosion.tscn").instance())
 				change_state(EXPLODING)
+				emit_signal("exploded", position)
 			else:
 				change_state(IDLE)
+				
+
+func push_self_away(thing):
+	print(str(thing))
